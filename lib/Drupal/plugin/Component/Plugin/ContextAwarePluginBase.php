@@ -2,14 +2,14 @@
 
 /**
  * @file
- * Contains \Drupal\Component\Plugin\ContextAwarePluginBase
+ * Contains \Drupal\plugin\Component\Plugin\ContextAwarePluginBase
  */
 
-namespace Drupal\Component\Plugin;
+namespace Drupal\plugin\Component\Plugin;
 
-use Drupal\Component\Plugin\Context\ContextInterface;
-use Drupal\Component\Plugin\Exception\ContextException;
-use Drupal\Component\Plugin\Context\Context;
+use Drupal\plugin\Component\Plugin\Context\ContextInterface;
+use Drupal\plugin\Component\Plugin\Exception\ContextException;
+use Drupal\plugin\Component\Plugin\Context\Context;
 use Symfony\Component\Validator\ConstraintViolationList;
 
 /**
@@ -20,12 +20,12 @@ abstract class ContextAwarePluginBase extends PluginBase implements ContextAware
   /**
    * The data objects representing the context of this plugin.
    *
-   * @var \Drupal\Component\Plugin\Context\ContextInterface[]
+   * @var \Drupal\plugin\Component\Plugin\Context\ContextInterface[]
    */
   protected $context;
 
   /**
-   * Overrides \Drupal\Component\Plugin\PluginBase::__construct().
+   * Overrides \Drupal\plugin\Component\Plugin\PluginBase::__construct().
    *
    * Overrides the construction of context aware plugins to allow for
    * unvalidated constructor based injection of contexts.

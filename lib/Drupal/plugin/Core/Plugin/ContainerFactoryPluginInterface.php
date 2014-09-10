@@ -2,10 +2,10 @@
 
 /**
  * @file
- * Contains \Drupal\Core\Plugin\ContainerFactoryPluginInterface.
+ * Contains \Drupal\plugin\Core\Plugin\ContainerFactoryPluginInterface.
  */
 
-namespace Drupal\Core\Plugin;
+namespace Drupal\plugin\Core\Plugin;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 

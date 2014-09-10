@@ -2,10 +2,10 @@
 
 /**
  * @file
- * Contains \Drupal\Component\Plugin\Exception\PluginNotFoundException.
+ * Contains \Drupal\plugin\Component\Plugin\Exception\PluginNotFoundException.
  */
 
-namespace Drupal\Component\Plugin\Exception;
+namespace Drupal\plugin\Component\Plugin\Exception;
 
 /**
  * Plugin exception class to be thrown when a plugin ID could not be found.

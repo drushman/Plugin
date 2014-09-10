@@ -2,10 +2,10 @@
 
 /**
  * @file
- * Contains \Drupal\Component\Plugin\PluginBag.
+ * Contains \Drupal\plugin\Component\Plugin\PluginBag.
  */
 
-namespace Drupal\Component\Plugin;
+namespace Drupal\plugin\Component\Plugin;
 
 /**
  * Defines an object which stores multiple plugin instances to lazy load them.
@@ -177,7 +177,7 @@ abstract class PluginBag implements \Iterator, \Countable {
     // There can be situations where configuration contains data for a plugin
     // that cannot be instantiated. In this case, this enables us to skip that
     // plugin during iteration.
-    // @todo Look at removing when https://drupal.org/node/2080823 has been
+    // @todo Look at removing when https://Drupal\plugin.org/node/2080823 has been
     //   solved.
     return $key !== NULL && $key !== FALSE && $this->get($key);
   }

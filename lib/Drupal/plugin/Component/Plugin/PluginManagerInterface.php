@@ -1,14 +1,14 @@
 <?php
 /**
  * @file
- * Contains \Drupal\Component\Plugin\PluginManagerInterface
+ * Contains \Drupal\plugin\Component\Plugin\PluginManagerInterface
  */
 
-namespace Drupal\Component\Plugin;
+namespace Drupal\plugin\Component\Plugin;
 
-use Drupal\Component\Plugin\Discovery\DiscoveryInterface;
-use Drupal\Component\Plugin\Factory\FactoryInterface;
-use Drupal\Component\Plugin\Mapper\MapperInterface;
+use Drupal\plugin\Component\Plugin\Discovery\DiscoveryInterface;
+use Drupal\plugin\Component\Plugin\Factory\FactoryInterface;
+use Drupal\plugin\Component\Plugin\Mapper\MapperInterface;
 
 /**
  * Interface implemented by plugin managers.
@@ -25,7 +25,7 @@ use Drupal\Component\Plugin\Mapper\MapperInterface;
  * To follow this pattern, plugin managers can extend from the PluginManagerBase
  * class, which contains the proxying logic.
  *
- * @see \Drupal\Component\Plugin\PluginManagerBase
+ * @see \Drupal\plugin\Component\Plugin\PluginManagerBase
  *
  * @ingroup plugin_api
  */

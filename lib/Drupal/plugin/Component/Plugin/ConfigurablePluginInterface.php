@@ -2,10 +2,10 @@
 
 /**
  * @file
- * Contains \Drupal\Component\Plugin\ConfigurablePluginInterface.
+ * Contains \Drupal\plugin\Component\Plugin\ConfigurablePluginInterface.
  */
 
-namespace Drupal\Component\Plugin;
+namespace Drupal\plugin\Component\Plugin;
 
 /**
  * Provides an interface for a configurable plugin.
@@ -57,8 +57,8 @@ interface ConfigurablePluginInterface {
    *   );
    *   @endcode
    *
-   * @see \Drupal\Core\Config\Entity\ConfigDependencyManager
-   * @see \Drupal\Core\Config\Entity\ConfigEntityInterface::getConfigDependencyName()
+   * @see \Drupal\plugin\Core\Config\Entity\ConfigDependencyManager
+   * @see \Drupal\plugin\Core\Config\Entity\ConfigEntityInterface::getConfigDependencyName()
    */
   public function calculateDependencies();
 

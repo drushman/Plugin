@@ -2,10 +2,10 @@
 
 /**
  * @file
- * Contains Drupal\Component\Plugin\DerivativeInspectionInterface.
+ * Contains Drupal\plugin\Component\Plugin\DerivativeInspectionInterface.
  */
 
-namespace Drupal\Component\Plugin;
+namespace Drupal\plugin\Component\Plugin;
 
 /**
  * Provides a plugin interface for providing derivative metadata inspection.

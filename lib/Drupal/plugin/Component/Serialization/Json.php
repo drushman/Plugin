@@ -2,10 +2,10 @@
 
 /**
  * @file
- * Contains \Drupal\Component\Serialization\Json.
+ * Contains \Drupal\plugin\Component\Serialization\Json.
  */
 
-namespace Drupal\Component\Serialization;
+namespace Drupal\plugin\Component\Serialization;
 
 /**
  * Default serialization for JSON.

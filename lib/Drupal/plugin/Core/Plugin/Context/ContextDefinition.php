@@ -2,13 +2,13 @@
 
 /**
  * @file
- * Contains \Drupal\Core\Plugin\Context\ContextDefinition.
+ * Contains \Drupal\plugin\Core\Plugin\Context\ContextDefinition.
  */
 
-namespace Drupal\Core\Plugin\Context;
+namespace Drupal\plugin\Core\Plugin\Context;
 
-use Drupal\Component\Utility\String;
-use Drupal\Core\TypedData\TypedDataTrait;
+use Drupal\plugin\Component\Utility\String;
+use Drupal\plugin\Core\TypedData\TypedDataTrait;
 
 /**
  * Defines a class for context definitions.

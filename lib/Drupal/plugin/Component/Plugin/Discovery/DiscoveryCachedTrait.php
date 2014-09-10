@@ -2,10 +2,10 @@
 
 /**
  * @file
- * Contains \Drupal\Component\Plugin\Discovery\DiscoveryCachedTrait.
+ * Contains \Drupal\plugin\Component\Plugin\Discovery\DiscoveryCachedTrait.
  */
 
-namespace Drupal\Component\Plugin\Discovery;
+namespace Drupal\plugin\Component\Plugin\Discovery;
 
 trait DiscoveryCachedTrait {
 

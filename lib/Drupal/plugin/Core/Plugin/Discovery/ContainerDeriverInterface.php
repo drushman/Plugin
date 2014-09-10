@@ -2,12 +2,12 @@
 
 /**
  * @file
- * Contains \Drupal\Core\Plugin\Discovery\ContainerDeriverInterface.
+ * Contains \Drupal\plugin\Core\Plugin\Discovery\ContainerDeriverInterface.
  */
 
-namespace Drupal\Core\Plugin\Discovery;
+namespace Drupal\plugin\Core\Plugin\Discovery;
 
-use Drupal\Component\Plugin\Derivative\DeriverInterface;
+use Drupal\plugin\Component\Plugin\Derivative\DeriverInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**

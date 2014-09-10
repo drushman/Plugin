@@ -2,10 +2,10 @@
 
 /**
  * @file
- * Contains \Drupal\Component\Plugin\Context\ContextDefinitionInterface.
+ * Contains \Drupal\plugin\Component\Plugin\Context\ContextDefinitionInterface.
  */
 
-namespace Drupal\Component\Plugin\Context;
+namespace Drupal\plugin\Component\Plugin\Context;
 
 /**
  * Interface for context definitions.

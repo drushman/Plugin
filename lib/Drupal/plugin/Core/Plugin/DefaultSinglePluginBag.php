@@ -2,14 +2,14 @@
 
 /**
  * @file
- * Contains \Drupal\Core\Plugin\DefaultSinglePluginBag.
+ * Contains \Drupal\plugin\Core\Plugin\DefaultSinglePluginBag.
  */
 
-namespace Drupal\Core\Plugin;
+namespace Drupal\plugin\Core\Plugin;
 
-use Drupal\Component\Plugin\PluginManagerInterface;
-use Drupal\Component\Plugin\PluginBag;
-use Drupal\Component\Plugin\ConfigurablePluginInterface;
+use Drupal\plugin\Component\Plugin\PluginManagerInterface;
+use Drupal\plugin\Component\Plugin\PluginBag;
+use Drupal\plugin\Component\Plugin\ConfigurablePluginInterface;
 
 /**
  * Provides a default plugin bag for a plugin type.
@@ -25,7 +25,7 @@ class DefaultSinglePluginBag extends PluginBag {
   /**
    * The manager used to instantiate the plugins.
    *
-   * @var \Drupal\Component\Plugin\PluginManagerInterface
+   * @var \Drupal\plugin\Component\Plugin\PluginManagerInterface
    */
   protected $manager;
 
@@ -46,7 +46,7 @@ class DefaultSinglePluginBag extends PluginBag {
   /**
    * Constructs a new DefaultSinglePluginBag object.
    *
-   * @param \Drupal\Component\Plugin\PluginManagerInterface $manager
+   * @param \Drupal\plugin\Component\Plugin\PluginManagerInterface $manager
    *   The manager to be used for instantiating plugins.
    * @param string $instance_id
    *   The ID of the plugin instance.

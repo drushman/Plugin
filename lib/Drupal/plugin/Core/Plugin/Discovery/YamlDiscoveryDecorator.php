@@ -2,12 +2,12 @@
 
 /**
  * @file
- * Contains \Drupal\Core\Plugin\Discovery\YamlDiscoveryDecorator.
+ * Contains \Drupal\plugin\Core\Plugin\Discovery\YamlDiscoveryDecorator.
  */
 
-namespace Drupal\Core\Plugin\Discovery;
+namespace Drupal\plugin\Core\Plugin\Discovery;
 
-use Drupal\Component\Plugin\Discovery\DiscoveryInterface;
+use Drupal\plugin\Component\Plugin\Discovery\DiscoveryInterface;
 
 /**
  * Enables YAML discovery for plugin definitions.
@@ -20,14 +20,14 @@ class YamlDiscoveryDecorator extends YamlDiscovery {
   /**
    * The Discovery object being decorated.
    *
-   * @var \Drupal\Component\Plugin\Discovery\DiscoveryInterface
+   * @var \Drupal\plugin\Component\Plugin\Discovery\DiscoveryInterface
    */
   protected $decorated;
 
   /**
    * Constructs a YamlDiscoveryDecorator object.
    *
-   * @param \Drupal\Component\Plugin\Discovery\DiscoveryInterface $decorated
+   * @param \Drupal\plugin\Component\Plugin\Discovery\DiscoveryInterface $decorated
    *   The discovery object that is being decorated.
    * @param string $name
    *   The file name suffix to use for discovery. E.g. 'test' will become

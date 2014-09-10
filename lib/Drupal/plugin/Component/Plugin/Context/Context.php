@@ -2,12 +2,12 @@
 
 /**
  * @file
- * Contains \Drupal\Component\Plugin\Context\Context.
+ * Contains \Drupal\plugin\Component\Plugin\Context\Context.
  */
 
-namespace Drupal\Component\Plugin\Context;
+namespace Drupal\plugin\Component\Plugin\Context;
 
-use Drupal\Component\Plugin\Exception\ContextException;
+use Drupal\plugin\Component\Plugin\Exception\ContextException;
 use Symfony\Component\Validator\Constraints\Type;
 use Symfony\Component\Validator\Validation;
 
@@ -26,14 +26,14 @@ class Context implements ContextInterface {
   /**
    * The definition to which a context must conform.
    *
-   * @var \Drupal\Component\Plugin\Context\ContextDefinitionInterface
+   * @var \Drupal\plugin\Component\Plugin\Context\ContextDefinitionInterface
    */
   protected $contextDefinition;
 
   /**
    * Sets the contextDefinition for us without needing to call the setter.
    *
-   * @param \Drupal\Component\Plugin\Context\ContextDefinitionInterface $context_definition
+   * @param \Drupal\plugin\Component\Plugin\Context\ContextDefinitionInterface $context_definition
    *   The context definition.
    */
   public function __construct(ContextDefinitionInterface $context_definition) {
@@ -41,14 +41,14 @@ class Context implements ContextInterface {
   }
 
   /**
-   * Implements \Drupal\Component\Plugin\Context\ContextInterface::setContextValue().
+   * Implements \Drupal\plugin\Component\Plugin\Context\ContextInterface::setContextValue().
    */
   public function setContextValue($value) {
     $this->contextValue = $value;
   }
 
   /**
-   * Implements \Drupal\Component\Plugin\Context\ContextInterface::getContextValue().
+   * Implements \Drupal\plugin\Component\Plugin\Context\ContextInterface::getContextValue().
    */
   public function getContextValue() {
     // Support optional contexts.
@@ -71,14 +71,14 @@ class Context implements ContextInterface {
   }
 
   /**
-   * Implements \Drupal\Component\Plugin\Context\ContextInterface::getContextDefinition().
+   * Implements \Drupal\plugin\Component\Plugin\Context\ContextInterface::getContextDefinition().
    */
   public function getContextDefinition() {
     return $this->contextDefinition;
   }
 
   /**
-   * Implements \Drupal\Component\Plugin\Context\ContextInterface::getConstraints().
+   * Implements \Drupal\plugin\Component\Plugin\Context\ContextInterface::getConstraints().
    */
   public function getConstraints() {
     if (empty($this->contextDefinition['class'])) {
@@ -88,7 +88,7 @@ class Context implements ContextInterface {
   }
 
   /**
-   * Implements \Drupal\Component\Plugin\Context\ContextInterface::validate().
+   * Implements \Drupal\plugin\Component\Plugin\Context\ContextInterface::validate().
    */
   public function validate() {
     $validator = Validation::createValidatorBuilder()

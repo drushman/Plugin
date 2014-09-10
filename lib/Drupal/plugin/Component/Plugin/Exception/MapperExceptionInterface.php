@@ -4,7 +4,7 @@
  * Base exception interface for grouping mapper exceptions.
  */
 
-namespace Drupal\Component\Plugin\Exception;
+namespace Drupal\plugin\Component\Plugin\Exception;
 
 /**
  * Extended interface for exceptions thrown specifically by the Mapper subsystem

@@ -2,10 +2,10 @@
 
 /**
  * @file
- * Contains \Drupal\Core\Plugin\PluginManagerPass.
+ * Contains \Drupal\plugin\Core\Plugin\PluginManagerPass.
  */
 
-namespace Drupal\Core\Plugin;
+namespace Drupal\plugin\Core\Plugin;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -23,7 +23,7 @@ class PluginManagerPass implements CompilerPassInterface {
     $cache_clearer_definition = $container->getDefinition('plugin.cache_clearer');
     foreach ($container->getDefinitions() as $service_id => $definition) {
       if (strpos($service_id, 'plugin.manager.') === 0 || $definition->hasTag('plugin_manager_cache_clear')) {
-        if (is_subclass_of($definition->getClass(), '\Drupal\Component\Plugin\Discovery\CachedDiscoveryInterface')) {
+        if (is_subclass_of($definition->getClass(), '\Drupal\plugin\Component\Plugin\Discovery\CachedDiscoveryInterface')) {
           $cache_clearer_definition->addMethodCall('addCachedDiscovery', array(new Reference($service_id)));
         }
       }

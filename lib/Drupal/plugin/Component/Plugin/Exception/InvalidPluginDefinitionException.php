@@ -2,10 +2,10 @@
 
 /**
  * @file
- * Contains \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException.
+ * Contains \Drupal\plugin\Component\Plugin\Exception\InvalidPluginDefinitionException.
  */
 
-namespace Drupal\Component\Plugin\Exception;
+namespace Drupal\plugin\Component\Plugin\Exception;
 
 /**
  * Defines a class for invalid plugin definition exceptions.

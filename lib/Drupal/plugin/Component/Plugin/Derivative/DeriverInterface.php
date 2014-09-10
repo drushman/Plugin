@@ -2,10 +2,10 @@
 
 /**
  * @file
- * Contains \Drupal\Component\Plugin\Derivative\DeriverInterface.
+ * Contains \Drupal\plugin\Component\Plugin\Derivative\DeriverInterface.
  */
 
-namespace Drupal\Component\Plugin\Derivative;
+namespace Drupal\plugin\Component\Plugin\Derivative;
 
 /**
  * Provides additional plugin definitions based on an existing definition.

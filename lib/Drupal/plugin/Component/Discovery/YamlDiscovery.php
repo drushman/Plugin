@@ -2,12 +2,12 @@
 
 /**
  * @file
- * Contains \Drupal\Component\Discovery\YamlDiscovery.
+ * Contains \Drupal\plugin\Component\Discovery\YamlDiscovery.
  */
 
-namespace Drupal\plugin\Component\Discovery;
+namespace Drupal\plugin\plugin\Component\Discovery;
 
-use Drupal\Component\Serialization\Yaml;
+use Drupal\plugin\Component\Serialization\Yaml;
 
 /**
  * Provides discovery for YAML files within a given set of directories.

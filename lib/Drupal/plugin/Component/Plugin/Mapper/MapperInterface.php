@@ -1,10 +1,10 @@
 <?php
 /**
  * @file
- * Contains \Drupal\Component\Plugin\Mapper\MapperInterface.
+ * Contains \Drupal\plugin\Component\Plugin\Mapper\MapperInterface.
  */
 
-namespace Drupal\Component\Plugin\Mapper;
+namespace Drupal\plugin\Component\Plugin\Mapper;
 
 /**
  * Plugin mapper interface.

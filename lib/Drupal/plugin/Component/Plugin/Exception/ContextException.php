@@ -2,10 +2,10 @@
 
 /**
  * @file
- * Contains \Drupal\Component\Plugin\Exception\ContextException.
+ * Contains \Drupal\plugin\Component\Plugin\Exception\ContextException.
  */
 
-namespace Drupal\Component\Plugin\Exception;
+namespace Drupal\plugin\Component\Plugin\Exception;
 
 /**
  * An exception class to be thrown for context plugin exceptions.

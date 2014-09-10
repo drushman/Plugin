@@ -2,10 +2,10 @@
 
 /**
  * @file
- * Contains \Drupal\Component\Plugin\Context\ContextInterface.
+ * Contains \Drupal\plugin\Component\Plugin\Context\ContextInterface.
  */
 
-namespace Drupal\Component\Plugin\Context;
+namespace Drupal\plugin\Component\Plugin\Context;
 
 /**
  * A generic context interface for wrapping data a plugin needs to operate.
@@ -18,7 +18,7 @@ interface ContextInterface {
    * @param mixed $value
    *   The value of this context, matching the context definition.
    *
-   * @see \Drupal\Component\Plugin\Context\ContextInterface::setContextDefinition().
+   * @see \Drupal\plugin\Component\Plugin\Context\ContextInterface::setContextDefinition().
    */
   public function setContextValue($value);
 
@@ -33,7 +33,7 @@ interface ContextInterface {
   /**
    * Sets the definition that the context must conform to.
    *
-   * @param \Drupal\Component\Plugin\Context\ContextDefinitionInterface $context_definition
+   * @param \Drupal\plugin\Component\Plugin\Context\ContextDefinitionInterface $context_definition
    *   A defining characteristic representation of the context against which
    *   that context can be validated.
    */
@@ -42,7 +42,7 @@ interface ContextInterface {
   /**
    * Gets the provided definition that the context must conform to.
    *
-   * @return \Drupal\Component\Plugin\Context\ContextDefinitionInterface
+   * @return \Drupal\plugin\Component\Plugin\Context\ContextDefinitionInterface
    *   The defining characteristic representation of the context.
    */
   public function getContextDefinition();

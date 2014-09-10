@@ -2,24 +2,20 @@
 
 /**
  * @file
- * Contains \Drupal\Core\Plugin\DefaultPluginManager
+ * Contains \Drupal\plugin\Core\Plugin\DefaultPluginManager
  */
 
-namespace Drupal\Core\Plugin;
+namespace Drupal\plugin\Core\Plugin;
 
-use Drupal\Component\Plugin\Discovery\CachedDiscoveryInterface;
-use Drupal\Component\Plugin\Discovery\DiscoveryCachedTrait;
-use Drupal\Component\Plugin\Exception\PluginNotFoundException;
-use Drupal\Core\Plugin\Discovery\ContainerDerivativeDiscoveryDecorator;
-use Drupal\Component\Plugin\PluginManagerBase;
-use Drupal\Component\Plugin\PluginManagerInterface;
-use Drupal\Component\Utility\NestedArray;
-use Drupal\Core\Cache\Cache;
-use Drupal\Core\Cache\CacheBackendInterface;
-use Drupal\Core\Extension\ModuleHandlerInterface;
-use Drupal\Core\Language\LanguageManagerInterface;
-use Drupal\Core\Plugin\Discovery\AnnotatedClassDiscovery;
-use Drupal\Core\Plugin\Factory\ContainerFactory;
+use Drupal\plugin\Component\Plugin\Discovery\CachedDiscoveryInterface;
+use Drupal\plugin\Component\Plugin\Discovery\DiscoveryCachedTrait;
+use Drupal\plugin\Component\Plugin\Exception\PluginNotFoundException;
+use Drupal\plugin\Core\Plugin\Discovery\ContainerDerivativeDiscoveryDecorator;
+use Drupal\plugin\Component\Plugin\PluginManagerBase;
+use Drupal\plugin\Component\Plugin\PluginManagerInterface;
+use Drupal\plugin\Component\Utility\NestedArray;
+use Drupal\plugin\Core\Plugin\Discovery\AnnotatedClassDiscovery;
+use Drupal\plugin\Core\Plugin\Factory\ContainerFactory;
 
 /**
  * Base class for plugin managers.
@@ -33,7 +29,7 @@ class DefaultPluginManager extends PluginManagerBase implements PluginManagerInt
   /**
    * Cache backend instance.
    *
-   * @var \Drupal\Core\Cache\CacheBackendInterface
+   * @var \Drupal\plugin\Core\Cache\CacheBackendInterface
    */
   protected $cacheBackend;
 
@@ -69,7 +65,7 @@ class DefaultPluginManager extends PluginManagerBase implements PluginManagerInt
   /**
    * The module handler to invoke the alter hook.
    *
-   * @var \Drupal\Core\Extension\ModuleHandlerInterface
+   * @var \Drupal\plugin\Core\Extension\ModuleHandlerInterface
    */
   protected $moduleHandler;
 
@@ -90,18 +86,18 @@ class DefaultPluginManager extends PluginManagerBase implements PluginManagerInt
    * @param \Traversable $namespaces
    *   An object that implements \Traversable which contains the root paths
    *   keyed by the corresponding namespace to look for plugin implementations.
-   * @param \Drupal\Core\Extension\ModuleHandlerInterface $module_handler
+   * @param \Drupal\plugin\Core\Extension\ModuleHandlerInterface $module_handler
    *   The module handler.
    * @param string $plugin_definition_annotation_name
    *   (optional) The name of the annotation that contains the plugin definition.
-   *   Defaults to 'Drupal\Component\Annotation\Plugin'.
+   *   Defaults to 'Drupal\plugin\Component\Annotation\Plugin'.
    */
-  public function __construct($subdir, \Traversable $namespaces, ModuleHandlerInterface $module_handler, $plugin_definition_annotation_name = 'Drupal\Component\Annotation\Plugin') {
+  public function __construct($subdir, \Traversable $namespaces, $plugin_definition_annotation_name = 'Drupal\plugin\Component\Annotation\Plugin') {
     $this->subdir = $subdir;
     $this->discovery = new AnnotatedClassDiscovery($subdir, $namespaces, $plugin_definition_annotation_name);
     $this->discovery = new ContainerDerivativeDiscoveryDecorator($this->discovery);
     $this->factory = new ContainerFactory($this);
-    $this->moduleHandler = $module_handler;
+//    $this->moduleHandler = $module_handler;
   }
 
   /**
@@ -110,7 +106,7 @@ class DefaultPluginManager extends PluginManagerBase implements PluginManagerInt
    * Plugin definitions are cached using the provided cache backend. The
    * interface language is added as a suffix to the cache key.
    *
-   * @param \Drupal\Core\Cache\CacheBackendInterface $cache_backend
+   * @param \Drupal\plugin\Core\Cache\CacheBackendInterface $cache_backend
    *   Cache backend instance to use.
    * @param string $cache_key
    *   Cache key prefix to use, the language code will be appended
@@ -224,7 +220,7 @@ class DefaultPluginManager extends PluginManagerBase implements PluginManagerInt
       $this->processDefinition($definition, $plugin_id);
     }
     if ($this->alterHook) {
-      $this->moduleHandler->alter($this->alterHook, $definitions);
+//      $this->moduleHandler->alter($this->alterHook, $definitions);
     }
     // If this plugin was provided by a module that does not exist, remove the
     // plugin definition.

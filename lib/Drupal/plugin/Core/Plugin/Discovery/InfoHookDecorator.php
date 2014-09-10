@@ -2,13 +2,13 @@
 
 /**
  * @file
- * Contains Drupal\Core\Plugin\Discovery\InfoHookDecorator.
+ * Contains Drupal\plugin\Core\Plugin\Discovery\InfoHookDecorator.
  */
 
-namespace Drupal\Core\Plugin\Discovery;
+namespace Drupal\plugin\Core\Plugin\Discovery;
 
-use Drupal\Component\Plugin\Discovery\DiscoveryInterface;
-use Drupal\Component\Plugin\Discovery\DiscoveryTrait;
+use Drupal\plugin\Component\Plugin\Discovery\DiscoveryInterface;
+use Drupal\plugin\Component\Plugin\Discovery\DiscoveryTrait;
 
 /**
  * Allows info hook implementations to enhance discovered plugin definitions.
@@ -20,7 +20,7 @@ class InfoHookDecorator implements DiscoveryInterface {
   /**
    * The Discovery object being decorated.
    *
-   * @var \Drupal\Component\Plugin\Discovery\DiscoveryInterface
+   * @var \Drupal\plugin\Component\Plugin\Discovery\DiscoveryInterface
    */
   protected $decorated;
 
@@ -34,7 +34,7 @@ class InfoHookDecorator implements DiscoveryInterface {
   /**
    * Constructs a InfoHookDecorator object.
    *
-   * @param \Drupal\Component\Plugin\Discovery\DiscoveryInterface $decorated
+   * @param \Drupal\plugin\Component\Plugin\Discovery\DiscoveryInterface $decorated
    *   The object implementing DiscoveryInterface that is being decorated.
    * @param string $hook
    *   The name of the info hook to be invoked by this discovery instance.
@@ -45,11 +45,11 @@ class InfoHookDecorator implements DiscoveryInterface {
   }
 
   /**
-   * Implements Drupal\Component\Plugin\Discovery\DiscoveryInterface::getDefinitions().
+   * Implements Drupal\plugin\Component\Plugin\Discovery\DiscoveryInterface::getDefinitions().
    */
   public function getDefinitions() {
     $definitions = $this->decorated->getDefinitions();
-    foreach (\Drupal::moduleHandler()->getImplementations($this->hook) as $module) {
+    foreach (\Drupal\plugin::moduleHandler()->getImplementations($this->hook) as $module) {
       $function = $module . '_' . $this->hook;
       $function($definitions);
     }

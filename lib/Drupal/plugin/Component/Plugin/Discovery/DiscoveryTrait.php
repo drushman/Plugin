@@ -2,15 +2,15 @@
 
 /**
  * @file
- * Contains \Drupal\Component\Plugin\Discovery\DiscoveryTrait.
+ * Contains \Drupal\plugin\Component\Plugin\Discovery\DiscoveryTrait.
  */
 
-namespace Drupal\Component\Plugin\Discovery;
+namespace Drupal\plugin\Component\Plugin\Discovery;
 
-use Drupal\Component\Plugin\Exception\PluginNotFoundException;
+use Drupal\plugin\Component\Plugin\Exception\PluginNotFoundException;
 
 /**
- * @see Drupal\Component\Plugin\Discovery\DiscoveryInterface
+ * @see Drupal\plugin\Component\Plugin\Discovery\DiscoveryInterface
  */
 trait DiscoveryTrait {
 
@@ -42,7 +42,7 @@ trait DiscoveryTrait {
    *   A plugin definition, or NULL if the plugin ID is invalid and
    *   $exception_on_invalid is TRUE.
    *
-   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * @throws \Drupal\plugin\Component\Plugin\Exception\PluginNotFoundException
    *   Thrown if $plugin_id is invalid and $exception_on_invalid is TRUE.
    */
   protected function doGetDefinition(array $definitions, $plugin_id, $exception_on_invalid) {

@@ -2,12 +2,12 @@
 
 /**
  * @file
- * Contains \Drupal\Component\Serialization\Yaml.
+ * Contains \Drupal\plugin\Component\Serialization\Yaml.
  */
 
-namespace Drupal\Component\Serialization;
+namespace Drupal\plugin\Component\Serialization;
 
-use Drupal\Component\Serialization\Exception\InvalidDataTypeException;
+use Drupal\plugin\Component\Serialization\Exception\InvalidDataTypeException;
 use Symfony\Component\Yaml\Yaml as Symfony;
 
 /**

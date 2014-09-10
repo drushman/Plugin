@@ -1,10 +1,10 @@
 <?php
 /**
  * @file
- * Definition of Drupal\Component\Plugin\Factory\ReflectionFactory.
+ * Definition of Drupal\plugin\Component\Plugin\Factory\ReflectionFactory.
  */
 
-namespace Drupal\Component\Plugin\Factory;
+namespace Drupal\plugin\Component\Plugin\Factory;
 
 /**
  * A plugin factory that maps instance configuration to constructor arguments.
@@ -15,7 +15,7 @@ namespace Drupal\Component\Plugin\Factory;
 class ReflectionFactory extends DefaultFactory {
 
   /**
-   * Implements Drupal\Component\Plugin\Factory\FactoryInterface::createInstance().
+   * Implements Drupal\plugin\Component\Plugin\Factory\FactoryInterface::createInstance().
    */
   public function createInstance($plugin_id, array $configuration = array()) {
     $plugin_definition = $this->discovery->getDefinition($plugin_id);

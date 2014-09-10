@@ -2,10 +2,10 @@
 
 /**
  * @file
- * Contains \Drupal\Component\Serialization\PhpSerialize.
+ * Contains \Drupal\plugin\Component\Serialization\PhpSerialize.
  */
 
-namespace Drupal\Component\Serialization;
+namespace Drupal\plugin\Component\Serialization;
 
 /**
  * Default serialization for serialized PHP.

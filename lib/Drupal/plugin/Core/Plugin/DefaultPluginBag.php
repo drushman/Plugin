@@ -2,15 +2,15 @@
 
 /**
  * @file
- * Contains \Drupal\Core\Plugin\DefaultPluginBag.
+ * Contains \Drupal\plugin\Core\Plugin\DefaultPluginBag.
  */
 
-namespace Drupal\Core\Plugin;
+namespace Drupal\plugin\Core\Plugin;
 
-use Drupal\Component\Plugin\Exception\PluginNotFoundException;
-use Drupal\Component\Plugin\PluginBag;
-use Drupal\Component\Plugin\PluginManagerInterface;
-use Drupal\Component\Plugin\ConfigurablePluginInterface;
+use Drupal\plugin\Component\Plugin\Exception\PluginNotFoundException;
+use Drupal\plugin\Component\Plugin\PluginBag;
+use Drupal\plugin\Component\Plugin\PluginManagerInterface;
+use Drupal\plugin\Component\Plugin\ConfigurablePluginInterface;
 
 /**
  * Provides a default plugin bag for a plugin type.
@@ -24,7 +24,7 @@ class DefaultPluginBag extends PluginBag {
   /**
    * The manager used to instantiate the plugins.
    *
-   * @var \Drupal\Component\Plugin\PluginManagerInterface
+   * @var \Drupal\plugin\Component\Plugin\PluginManagerInterface
    */
   protected $manager;
 
@@ -54,7 +54,7 @@ class DefaultPluginBag extends PluginBag {
   /**
    * Constructs a new DefaultPluginBag object.
    *
-   * @param \Drupal\Component\Plugin\PluginManagerInterface $manager
+   * @param \Drupal\plugin\Component\Plugin\PluginManagerInterface $manager
    *   The manager to be used for instantiating plugins.
    * @param array $configurations
    *   (optional) An associative array containing the initial configuration for

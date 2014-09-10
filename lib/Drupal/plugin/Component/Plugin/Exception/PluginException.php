@@ -1,10 +1,10 @@
 <?php
 /**
  * @file
- * Definition of Drupal\Component\Plugin\Exception\PluginException.
+ * Definition of Drupal\plugin\Component\Plugin\Exception\PluginException.
  */
 
-namespace Drupal\Component\Plugin\Exception;
+namespace Drupal\plugin\Component\Plugin\Exception;
 
 /**
  * Generic Plugin exception class to be thrown when no more specific class

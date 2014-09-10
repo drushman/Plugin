@@ -2,12 +2,12 @@
 
 /**
  * @file
- * Contains \Drupal\Core\Plugin\Discovery\ContainerDerivativeDiscoveryDecorator.
+ * Contains \Drupal\plugin\Core\Plugin\Discovery\ContainerDerivativeDiscoveryDecorator.
  */
 
-namespace Drupal\Core\Plugin\Discovery;
+namespace Drupal\plugin\Core\Plugin\Discovery;
 
-use Drupal\Component\Plugin\Discovery\DerivativeDiscoveryDecorator;
+use Drupal\plugin\Component\Plugin\Discovery\DerivativeDiscoveryDecorator;
 
 class ContainerDerivativeDiscoveryDecorator extends DerivativeDiscoveryDecorator {
 
@@ -20,9 +20,9 @@ class ContainerDerivativeDiscoveryDecorator extends DerivativeDiscoveryDecorator
       $class = $this->getDeriverClass($base_definition);
       if ($class) {
         // If the deriver provides a factory method, pass the container to it.
-        if (is_subclass_of($class, '\Drupal\Core\Plugin\Discovery\ContainerDeriverInterface')) {
-          /** @var \Drupal\Core\Plugin\Discovery\ContainerDeriverInterface $class */
-          $this->derivers[$base_plugin_id] = $class::create(\Drupal::getContainer(), $base_plugin_id);
+        if (is_subclass_of($class, '\Drupal\plugin\Core\Plugin\Discovery\ContainerDeriverInterface')) {
+          /** @var \Drupal\plugin\Core\Plugin\Discovery\ContainerDeriverInterface $class */
+          $this->derivers[$base_plugin_id] = $class::create(\Drupal\plugin::getContainer(), $base_plugin_id);
         }
         else {
           $this->derivers[$base_plugin_id] = new $class($base_plugin_id);

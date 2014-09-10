@@ -2,18 +2,18 @@
 
 /**
  * @file
- * Contains \Drupal\Core\Plugin\Context\ContextHandler.
+ * Contains \Drupal\plugin\Core\Plugin\Context\ContextHandler.
  */
 
-namespace Drupal\Core\Plugin\Context;
+namespace Drupal\plugin\Core\Plugin\Context;
 
-use Drupal\Component\Plugin\ConfigurablePluginInterface;
-use Drupal\Component\Plugin\ContextAwarePluginInterface;
-use Drupal\Component\Plugin\Exception\ContextException;
-use Drupal\Component\Utility\String;
-use Drupal\Core\TypedData\DataDefinitionInterface;
-use Drupal\Core\TypedData\DataDefinition;
-use Drupal\Core\TypedData\TypedDataManager;
+use Drupal\plugin\Component\Plugin\ConfigurablePluginInterface;
+use Drupal\plugin\Component\Plugin\ContextAwarePluginInterface;
+use Drupal\plugin\Component\Plugin\Exception\ContextException;
+use Drupal\plugin\Component\Utility\String;
+use Drupal\plugin\Core\TypedData\DataDefinitionInterface;
+use Drupal\plugin\Core\TypedData\DataDefinition;
+use Drupal\plugin\Core\TypedData\TypedDataManager;
 
 /**
  * Provides methods to handle sets of contexts.
@@ -23,14 +23,14 @@ class ContextHandler implements ContextHandlerInterface {
   /**
    * The typed data manager.
    *
-   * @var \Drupal\Core\TypedData\TypedDataManager
+   * @var \Drupal\plugin\Core\TypedData\TypedDataManager
    */
   protected $typedDataManager;
 
   /**
    * Constructs a new ContextHandler.
    *
-   * @param \Drupal\Core\TypedData\TypedDataManager $typed_data
+   * @param \Drupal\plugin\Core\TypedData\TypedDataManager $typed_data
    *   The typed data manager.
    */
   public function __construct(TypedDataManager $typed_data) {
@@ -50,7 +50,7 @@ class ContextHandler implements ContextHandlerInterface {
       // Build an array of requirements out of the contexts specified by the
       // plugin definition.
       $requirements = array();
-      /** @var $plugin_context \Drupal\Core\Plugin\Context\ContextDefinitionInterface */
+      /** @var $plugin_context \Drupal\plugin\Core\Plugin\Context\ContextDefinitionInterface */
       foreach ($plugin_definition['context'] as $context_id => $plugin_context) {
         $definition = $this->typedDataManager->getDefinition($plugin_context->getDataType());
         $definition['type'] = $plugin_context->getDataType();
@@ -72,7 +72,7 @@ class ContextHandler implements ContextHandlerInterface {
         }
 
         // @todo Use context definition objects after
-        //   https://drupal.org/node/2281635.
+        //   https://Drupal\plugin.org/node/2281635.
         $requirements[$context_id] = new DataDefinition($definition);
       }
 

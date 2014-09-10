@@ -1,10 +1,10 @@
 <?php
 /**
  * @file
- * Definition of \Drupal\Component\Plugin\Exception\InvalidDeriverClassException.
+ * Definition of \Drupal\plugin\Component\Plugin\Exception\InvalidDeriverClassException.
  */
 
-namespace Drupal\Component\Plugin\Exception;
+namespace Drupal\plugin\Component\Plugin\Exception;
 
 /**
  * Exception to be thrown if a plugin tries to use an invalid deriver.

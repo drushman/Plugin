@@ -2,20 +2,20 @@
 
 /**
  * @file
- * Contains \Drupal\Core\Plugin\Context\Context.
+ * Contains \Drupal\plugin\Core\Plugin\Context\Context.
  */
 
-namespace Drupal\Core\Plugin\Context;
+namespace Drupal\plugin\Core\Plugin\Context;
 
-use Drupal\Component\Plugin\Context\Context as ComponentContext;
-use Drupal\Component\Plugin\Exception\ContextException;
-use Drupal\Component\Utility\String;
-use Drupal\Core\Entity\ContentEntityInterface;
-use Drupal\Core\TypedData\TypedDataInterface;
-use Drupal\Core\TypedData\TypedDataTrait;
+use Drupal\plugin\Component\Plugin\Context\Context as ComponentContext;
+use Drupal\plugin\Component\Plugin\Exception\ContextException;
+use Drupal\plugin\Component\Utility\String;
+use Drupal\plugin\Core\Entity\ContentEntityInterface;
+use Drupal\plugin\Core\TypedData\TypedDataInterface;
+use Drupal\plugin\Core\TypedData\TypedDataTrait;
 
 /**
- * A Drupal specific context wrapper class.
+ * A Drupal\plugin specific context wrapper class.
  */
 class Context extends ComponentContext implements ContextInterface {
 
@@ -24,14 +24,14 @@ class Context extends ComponentContext implements ContextInterface {
   /**
    * The data associated with the context.
    *
-   * @var \Drupal\Core\TypedData\TypedDataInterface
+   * @var \Drupal\plugin\Core\TypedData\TypedDataInterface
    */
   protected $contextData;
 
   /**
    * The definition to which a context must conform.
    *
-   * @var \Drupal\Core\Plugin\Context\ContextDefinitionInterface
+   * @var \Drupal\plugin\Core\Plugin\Context\ContextDefinitionInterface
    */
   protected $contextDefinition;
 

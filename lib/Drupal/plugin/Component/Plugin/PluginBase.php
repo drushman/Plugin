@@ -1,10 +1,10 @@
 <?php
 /**
  * @file
- * Contains \Drupal\Component\Plugin\PluginBase
+ * Contains \Drupal\plugin\Component\Plugin\PluginBase
  */
 
-namespace Drupal\Component\Plugin;
+namespace Drupal\plugin\Component\Plugin;
 
 /**
  * Base class for plugins wishing to support metadata inspection.
@@ -34,7 +34,7 @@ abstract class PluginBase implements PluginInspectionInterface, DerivativeInspec
    * Configuration information passed into the plugin.
    *
    * When using an interface like
-   * \Drupal\Component\Plugin\ConfigurablePluginInterface, this is where the
+   * \Drupal\plugin\Component\Plugin\ConfigurablePluginInterface, this is where the
    * configuration should be stored.
    *
    * Plugin configuration is optional, so plugin implementations must provide
@@ -45,7 +45,7 @@ abstract class PluginBase implements PluginInspectionInterface, DerivativeInspec
   protected $configuration;
 
   /**
-   * Constructs a Drupal\Component\Plugin\PluginBase object.
+   * Constructs a Drupal\plugin\Component\Plugin\PluginBase object.
    *
    * @param array $configuration
    *   A configuration array containing information about the plugin instance.

@@ -2,10 +2,10 @@
 
 /**
  * @file
- * Contains \Drupal\Component\Plugin\Discovery\StaticDiscoveryDecorator.
+ * Contains \Drupal\plugin\Component\Plugin\Discovery\StaticDiscoveryDecorator.
  */
 
-namespace Drupal\Component\Plugin\Discovery;
+namespace Drupal\plugin\Component\Plugin\Discovery;
 
 /**
  * A decorator that allows manual registration of undiscoverable definitions.
@@ -15,7 +15,7 @@ class StaticDiscoveryDecorator extends StaticDiscovery {
   /**
    * The Discovery object being decorated.
    *
-   * @var \Drupal\Component\Plugin\Discovery\DiscoveryInterface
+   * @var \Drupal\plugin\Component\Plugin\Discovery\DiscoveryInterface
    */
   protected $decorated;
 
@@ -27,9 +27,9 @@ class StaticDiscoveryDecorator extends StaticDiscovery {
   protected $registerDefinitions;
 
   /**
-   * Constructs a \Drupal\Component\Plugin\Discovery\StaticDiscoveryDecorator object.
+   * Constructs a \Drupal\plugin\Component\Plugin\Discovery\StaticDiscoveryDecorator object.
    *
-   * @param \Drupal\Component\Plugin\Discovery\DiscoveryInterface $decorated
+   * @param \Drupal\plugin\Component\Plugin\Discovery\DiscoveryInterface $decorated
    *   The discovery object that is being decorated.
    * @param \Callable $registerDefinitions
    *   (optional) A callback or closure used for registering additional
@@ -52,7 +52,7 @@ class StaticDiscoveryDecorator extends StaticDiscovery {
   }
 
   /**
-   * Implements Drupal\Component\Plugin\Discovery\DiscoveryInterface::getDefinitions().
+   * Implements Drupal\plugin\Component\Plugin\Discovery\DiscoveryInterface::getDefinitions().
    */
   public function getDefinitions() {
     if (isset($this->registerDefinitions)) {

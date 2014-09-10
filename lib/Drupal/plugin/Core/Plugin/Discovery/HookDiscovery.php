@@ -2,14 +2,14 @@
 
 /**
  * @file
- * Definition of Drupal\Core\Plugin\Discovery\HookDiscovery.
+ * Definition of Drupal\plugin\Core\Plugin\Discovery\HookDiscovery.
  */
 
-namespace Drupal\Core\Plugin\Discovery;
+namespace Drupal\plugin\Core\Plugin\Discovery;
 
-use Drupal\Component\Plugin\Discovery\DiscoveryInterface;
-use Drupal\Component\Plugin\Discovery\DiscoveryTrait;
-use Drupal\Core\Extension\ModuleHandlerInterface;
+use Drupal\plugin\Component\Plugin\Discovery\DiscoveryInterface;
+use Drupal\plugin\Component\Plugin\Discovery\DiscoveryTrait;
+use Drupal\plugin\Core\Extension\ModuleHandlerInterface;
 
 /**
  * Provides a hook-based plugin discovery class.
@@ -28,17 +28,17 @@ class HookDiscovery implements DiscoveryInterface {
   /**
    * The module handler used to find and execute the plugin hook.
    *
-   * @var \Drupal\Core\Extension\ModuleHandlerInterface
+   * @var \Drupal\plugin\Core\Extension\ModuleHandlerInterface
    */
   protected $moduleHandler;
 
   /**
-   * Constructs a Drupal\Core\Plugin\Discovery\HookDiscovery object.
+   * Constructs a Drupal\plugin\Core\Plugin\Discovery\HookDiscovery object.
    *
-   * @param \Drupal\Core\Extension\ModuleHandlerInterface $module_handler
+   * @param \Drupal\plugin\Core\Extension\ModuleHandlerInterface $module_handler
    *   The module handler.
    * @param string $hook
-   *   The Drupal hook that a module can implement in order to interface to
+   *   The Drupal\plugin hook that a module can implement in order to interface to
    *   this discovery class.
    */
   function __construct(ModuleHandlerInterface $module_handler, $hook) {
@@ -47,7 +47,7 @@ class HookDiscovery implements DiscoveryInterface {
   }
 
   /**
-   * Implements Drupal\Component\Plugin\Discovery\DicoveryInterface::getDefinitions().
+   * Implements Drupal\plugin\Component\Plugin\Discovery\DicoveryInterface::getDefinitions().
    */
   public function getDefinitions() {
     $definitions = array();

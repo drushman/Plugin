@@ -2,12 +2,12 @@
 
 /**
  * @file
- * Contains \Drupal\Core\Plugin\Context\ContextDefinitionInterface.
+ * Contains \Drupal\plugin\Core\Plugin\Context\ContextDefinitionInterface.
  */
 
-namespace Drupal\Core\Plugin\Context;
+namespace Drupal\plugin\Core\Plugin\Context;
 
-use Drupal\Component\Plugin\Context\ContextDefinitionInterface as ComponentContextDefinitionInterface;
+use Drupal\plugin\Component\Plugin\Context\ContextDefinitionInterface as ComponentContextDefinitionInterface;
 
 /**
  * Interface for context definitions.
@@ -17,7 +17,7 @@ interface ContextDefinitionInterface extends ComponentContextDefinitionInterface
   /**
    * Returns the data definition of the defined context.
    *
-   * @return \Drupal\Core\TypedData\DataDefinitionInterface
+   * @return \Drupal\plugin\Core\TypedData\DataDefinitionInterface
    *   The data definition object.
    */
   public function getDataDefinition();

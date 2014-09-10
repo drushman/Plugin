@@ -2,15 +2,15 @@
 
 /**
  * @file
- * Contains \Drupal\Core\Action\ConfigurableActionBase.
+ * Contains \Drupal\plugin\Core\Action\ConfigurableActionBase.
  */
 
-namespace Drupal\Core\Action;
+namespace Drupal\plugin\Core\Action;
 
-use Drupal\Component\Plugin\ConfigurablePluginInterface;
-use Drupal\Core\Action\ActionBase;
-use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Plugin\PluginFormInterface;
+use Drupal\plugin\Component\Plugin\ConfigurablePluginInterface;
+use Drupal\plugin\Core\Action\ActionBase;
+use Drupal\plugin\Core\Form\FormStateInterface;
+use Drupal\plugin\Core\Plugin\PluginFormInterface;
 
 /**
  * Provides a base implementation for a configurable Action plugin.

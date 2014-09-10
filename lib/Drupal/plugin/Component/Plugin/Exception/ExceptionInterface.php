@@ -1,10 +1,10 @@
 <?php
 /**
  * @file
- * Definition of Drupal\Component\Plugin\Exception\ExceptionInterface.
+ * Definition of Drupal\plugin\Component\Plugin\Exception\ExceptionInterface.
  */
 
-namespace Drupal\Component\Plugin\Exception;
+namespace Drupal\plugin\Component\Plugin\Exception;
 
 /**
  * Exception interface for all exceptions thrown by the Plugin component.

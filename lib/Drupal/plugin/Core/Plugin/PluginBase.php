@@ -2,14 +2,14 @@
 
 /**
  * @file
- * Contains \Drupal\Core\Plugin\PluginBase
+ * Contains \Drupal\plugin\Core\Plugin\PluginBase
  */
 
-namespace Drupal\Core\Plugin;
+namespace Drupal\plugin\Core\Plugin;
 
-use Drupal\Component\Plugin\PluginBase as ComponentPluginBase;
-use Drupal\Core\StringTranslation\StringTranslationTrait;
-use Drupal\Core\DependencyInjection\DependencySerializationTrait;
+use Drupal\plugin\Component\Plugin\PluginBase as ComponentPluginBase;
+//use Drupal\plugin\Core\StringTranslation\StringTranslationTrait;
+//use Drupal\plugin\Core\DependencyInjection\DependencySerializationTrait;
 
 /**
  * Base class for plugins supporting metadata inspection and translation.
@@ -17,7 +17,7 @@ use Drupal\Core\DependencyInjection\DependencySerializationTrait;
  * @ingroup plugin_api
  */
 abstract class PluginBase extends ComponentPluginBase {
-  use StringTranslationTrait;
-  use DependencySerializationTrait;
+//  use StringTranslationTrait;
+//  use DependencySerializationTrait;
 
 }

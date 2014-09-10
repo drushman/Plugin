@@ -2,12 +2,12 @@
 
 /**
  * @file
- * Contains \Drupal\Core\Plugin\PluginFormInterface.
+ * Contains \Drupal\plugin\Core\Plugin\PluginFormInterface.
  */
 
-namespace Drupal\Core\Plugin;
+namespace Drupal\plugin\Core\Plugin;
 
-use Drupal\Core\Form\FormStateInterface;
+use Drupal\plugin\Core\Form\FormStateInterface;
 
 /**
  * Provides an interface for a plugin that contains a form.
@@ -21,7 +21,7 @@ interface PluginFormInterface {
    *
    * @param array $form
    *   An associative array containing the structure of the form.
-   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   * @param \Drupal\plugin\Core\Form\FormStateInterface $form_state
    *   The current state of the form.
    *
    * @return array
@@ -34,7 +34,7 @@ interface PluginFormInterface {
    *
    * @param array $form
    *   An associative array containing the structure of the form.
-   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   * @param \Drupal\plugin\Core\Form\FormStateInterface $form_state
    *   The current state of the form.
    */
   public function validateConfigurationForm(array &$form, FormStateInterface $form_state);
@@ -44,7 +44,7 @@ interface PluginFormInterface {
    *
    * @param array $form
    *   An associative array containing the structure of the form.
-   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   * @param \Drupal\plugin\Core\Form\FormStateInterface $form_state
    *   The current state of the form.
    */
   public function submitConfigurationForm(array &$form, FormStateInterface $form_state);

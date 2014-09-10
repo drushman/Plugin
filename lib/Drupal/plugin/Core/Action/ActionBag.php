@@ -2,12 +2,12 @@
 
 /**
  * @file
- * Contains \Drupal\Core\Action\ActionBag.
+ * Contains \Drupal\plugin\Core\Action\ActionBag.
  */
 
-namespace Drupal\Core\Action;
+namespace Drupal\plugin\Core\Action;
 
-use Drupal\Core\Plugin\DefaultSinglePluginBag;
+use Drupal\plugin\Core\Plugin\DefaultSinglePluginBag;
 
 /**
  * Provides a container for lazily loading Action plugins.
@@ -17,7 +17,7 @@ class ActionBag extends DefaultSinglePluginBag {
   /**
    * {@inheritdoc}
    *
-   * @return \Drupal\Core\Action\ActionInterface
+   * @return \Drupal\plugin\Core\Action\ActionInterface
    */
   public function &get($instance_id) {
     return parent::get($instance_id);

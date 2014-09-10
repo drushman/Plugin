@@ -2,14 +2,14 @@
 
 /**
  * @file
- * Contains \Drupal\Core\Plugin\PluginDependencyTrait.
+ * Contains \Drupal\plugin\Core\Plugin\PluginDependencyTrait.
  */
 
-namespace Drupal\Core\Plugin;
+namespace Drupal\plugin\Core\Plugin;
 
-use Drupal\Component\Plugin\ConfigurablePluginInterface;
-use Drupal\Component\Plugin\PluginInspectionInterface;
-use Drupal\Core\Entity\DependencyTrait;
+use Drupal\plugin\Component\Plugin\ConfigurablePluginInterface;
+use Drupal\plugin\Component\Plugin\PluginInspectionInterface;
+use Drupal\plugin\Core\Entity\DependencyTrait;
 
 /**
  * Provides a trait for calculating the dependencies of a plugin.
@@ -21,7 +21,7 @@ trait PluginDependencyTrait {
   /**
    * Calculates the dependencies of a specific plugin instance.
    *
-   * @param \Drupal\Component\Plugin\PluginInspectionInterface $instance
+   * @param \Drupal\plugin\Component\Plugin\PluginInspectionInterface $instance
    *   The plugin instance.
    */
   protected function calculatePluginDependencies(PluginInspectionInterface $instance) {

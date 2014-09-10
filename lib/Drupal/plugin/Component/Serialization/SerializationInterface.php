@@ -2,10 +2,10 @@
 
 /**
  * @file
- * Contains \Drupal\Component\Serialization\SerializationInterface.
+ * Contains \Drupal\plugin\Component\Serialization\SerializationInterface.
  */
 
-namespace Drupal\Component\Serialization;
+namespace Drupal\plugin\Component\Serialization;
 
 /**
  * Defines an interface for serialization formats.

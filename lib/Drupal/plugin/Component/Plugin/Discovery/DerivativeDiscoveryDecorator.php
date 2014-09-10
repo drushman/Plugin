@@ -2,12 +2,12 @@
 
 /**
  * @file
- * Contains \Drupal\Component\Plugin\Discovery\DerivativeDiscoveryDecorator.
+ * Contains \Drupal\plugin\Component\Plugin\Discovery\DerivativeDiscoveryDecorator.
  */
 
-namespace Drupal\Component\Plugin\Discovery;
+namespace Drupal\plugin\Component\Plugin\Discovery;
 
-use Drupal\Component\Plugin\Exception\InvalidDeriverException;
+use Drupal\plugin\Component\Plugin\Exception\InvalidDeriverException;
 
 /**
  * Base class providing the tools for a plugin discovery to be derivative aware.
@@ -22,7 +22,7 @@ class DerivativeDiscoveryDecorator implements DiscoveryInterface {
   /**
    * Plugin derivers.
    *
-   * @var \Drupal\Component\Plugin\Derivative\DeriverInterface[]
+   * @var \Drupal\plugin\Component\Plugin\Derivative\DeriverInterface[]
    *   Keys are base plugin IDs.
    */
   protected $derivers = array();
@@ -30,14 +30,14 @@ class DerivativeDiscoveryDecorator implements DiscoveryInterface {
   /**
    * The decorated plugin discovery.
    *
-   * @var \Drupal\Component\Plugin\Discovery\DiscoveryInterface
+   * @var \Drupal\plugin\Component\Plugin\Discovery\DiscoveryInterface
    */
   protected $decorated;
 
   /**
    * Creates a new instance.
    *
-   * @param \Drupal\Component\Plugin\Discovery\DiscoveryInterface $decorated
+   * @param \Drupal\plugin\Component\Plugin\Discovery\DiscoveryInterface $decorated
    *   The parent object implementing DiscoveryInterface that is being
    *   decorated.
    */
@@ -48,9 +48,9 @@ class DerivativeDiscoveryDecorator implements DiscoveryInterface {
   /**
    * {@inheritdoc}
    *
-   * @throws \Drupal\Component\Plugin\Exception\InvalidDeriverException
+   * @throws \Drupal\plugin\Component\Plugin\Exception\InvalidDeriverException
    *   Thrown if the 'deriver' class specified in the plugin definition
-   *   does not implement \Drupal\Component\Plugin\Derivative\DeriverInterface.
+   *   does not implement \Drupal\plugin\Component\Plugin\Derivative\DeriverInterface.
    */
   public function getDefinition($plugin_id, $exception_on_invalid = TRUE) {
     // This check is only for derivative plugins that have explicitly provided
@@ -82,9 +82,9 @@ class DerivativeDiscoveryDecorator implements DiscoveryInterface {
   /**
    * {@inheritdoc}
    *
-   * @throws \Drupal\Component\Plugin\Exception\InvalidDeriverException
+   * @throws \Drupal\plugin\Component\Plugin\Exception\InvalidDeriverException
    *   Thrown if the 'deriver' class specified in the plugin definition
-   *   does not implement \Drupal\Component\Plugin\Derivative\DeriverInterface.
+   *   does not implement \Drupal\plugin\Component\Plugin\Derivative\DeriverInterface.
    */
   public function getDefinitions() {
     $plugin_definitions = $this->decorated->getDefinitions();
@@ -173,12 +173,12 @@ class DerivativeDiscoveryDecorator implements DiscoveryInterface {
    * @param mixed $base_definition
    *   The base plugin definition to build derivatives.
    *
-   * @return \Drupal\Component\Plugin\Derivative\DeriverInterface|null
+   * @return \Drupal\plugin\Component\Plugin\Derivative\DeriverInterface|null
    *   A DerivativeInterface or NULL if none exists for the plugin.
    *
-   * @throws \Drupal\Component\Plugin\Exception\InvalidDeriverException
+   * @throws \Drupal\plugin\Component\Plugin\Exception\InvalidDeriverException
    *   Thrown if the 'deriver' class specified in the plugin definition
-   *   does not implement \Drupal\Component\Plugin\Derivative\DeriverInterface.
+   *   does not implement \Drupal\plugin\Component\Plugin\Derivative\DeriverInterface.
    */
   protected function getDeriver($base_plugin_id, $base_definition) {
     if (!isset($this->derivers[$base_plugin_id])) {
@@ -199,18 +199,18 @@ class DerivativeDiscoveryDecorator implements DiscoveryInterface {
    *
    * @return string|null
    *   The name of a class implementing
-   *   \Drupal\Component\Plugin\Derivative\DeriverInterface.
+   *   \Drupal\plugin\Component\Plugin\Derivative\DeriverInterface.
    *
-   * @throws \Drupal\Component\Plugin\Exception\InvalidDeriverException
+   * @throws \Drupal\plugin\Component\Plugin\Exception\InvalidDeriverException
    *   Thrown if the 'deriver' class specified in the plugin definition
    *   does not implement
-   *   \Drupal\Component\Plugin\Derivative\DerivativeInterface.
+   *   \Drupal\plugin\Component\Plugin\Derivative\DerivativeInterface.
    */
   protected function getDeriverClass($base_definition) {
     $class = NULL;
     if ((is_array($base_definition) || ($base_definition = (array) $base_definition)) && (isset($base_definition['deriver']) && $class = $base_definition['deriver'])) {
-      if (!is_subclass_of($class, '\Drupal\Component\Plugin\Derivative\DeriverInterface')) {
-        throw new InvalidDeriverException(sprintf('Plugin (%s) deriver "%s" must implement \Drupal\Component\Plugin\Derivative\DeriverInterface', $base_definition['id'], $class));
+      if (!is_subclass_of($class, '\Drupal\plugin\Component\Plugin\Derivative\DeriverInterface')) {
+        throw new InvalidDeriverException(sprintf('Plugin (%s) deriver "%s" must implement \Drupal\plugin\Component\Plugin\Derivative\DeriverInterface', $base_definition['id'], $class));
       }
     }
     return $class;

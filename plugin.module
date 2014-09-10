@@ -1,8 +1,23 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+use Drupal\plugin\Core\Action\ActionManager;
+
+function plugin_menu() {
+  $items['admin/plugin'] = array(
+    'title' => 'Plugin in system',
+    'page callback' => 'plugin_callback',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+function plugin_callback() {
+  $namespaces = new \ArrayObject(array(
+    'Drupal\\plugin_example' => '/home/duynguyen/build_gc/gc_src_aduro_scale/profiles/gocampaign/modules/apps/aduro/modules/lms/plugin/plugin_example/lib/Drupal/plugin_example', 
+  ));
+  $action = new ActionManager($namespaces);
+  print_r($action->getDefinitions());
+  return  '';
+}
 

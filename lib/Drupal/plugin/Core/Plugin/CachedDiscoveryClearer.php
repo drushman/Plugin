@@ -2,14 +2,14 @@
 
 /**
  * @file
- * Contains \Drupal\Core\Plugin\CachedDiscoveryClearer.
+ * Contains \Drupal\plugin\Core\Plugin\CachedDiscoveryClearer.
  */
 
-namespace Drupal\Core\Plugin;
+namespace Drupal\plugin\Core\Plugin;
 
-use Drupal\Component\Plugin\Discovery\CachedDiscoveryInterface;
-use Drupal\Component\Plugin\Exception\PluginException;
-use Drupal\Component\Plugin\PluginManagerInterface;
+use Drupal\plugin\Component\Plugin\Discovery\CachedDiscoveryInterface;
+use Drupal\plugin\Component\Plugin\Exception\PluginException;
+use Drupal\plugin\Component\Plugin\PluginManagerInterface;
 
 /**
  * Defines a class which is capable of clearing the cache on plugin managers.
@@ -19,14 +19,14 @@ class CachedDiscoveryClearer {
   /**
    * The stored discoveries.
    *
-   * @var \Drupal\Component\Plugin\Discovery\CachedDiscoveryInterface[]
+   * @var \Drupal\plugin\Component\Plugin\Discovery\CachedDiscoveryInterface[]
    */
   protected $cachedDiscoveries = array();
 
   /**
    * Adds a plugin manager to the active list.
    *
-   * @param \Drupal\Component\Plugin\Discovery\CachedDiscoveryInterface $cached_discovery
+   * @param \Drupal\plugin\Component\Plugin\Discovery\CachedDiscoveryInterface $cached_discovery
    *   An object that implements the cached discovery interface, typically a
    *   plugin manager.
    */

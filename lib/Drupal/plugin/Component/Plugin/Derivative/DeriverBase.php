@@ -2,10 +2,10 @@
 
 /**
  * @file
- * Contains \Drupal\Component\Plugin\Derivative\DeriverBase.
+ * Contains \Drupal\plugin\Component\Plugin\Derivative\DeriverBase.
  */
 
-namespace Drupal\Component\Plugin\Derivative;
+namespace Drupal\plugin\Component\Plugin\Derivative;
 
 /**
  * Provides a basic deriver.

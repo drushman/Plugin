@@ -2,14 +2,14 @@
 
 /**
  * @file
- * Contains \Drupal\Core\Plugin\Discovery\AnnotatedClassDiscovery.
+ * Contains \Drupal\plugin\Core\Plugin\Discovery\AnnotatedClassDiscovery.
  */
 
-namespace Drupal\Core\Plugin\Discovery;
+namespace Drupal\plugin\Core\Plugin\Discovery;
 
-use Drupal\Component\Annotation\AnnotationInterface;
-use Drupal\Component\Annotation\Plugin\Discovery\AnnotatedClassDiscovery as ComponentAnnotatedClassDiscovery;
-use Drupal\Component\Utility\Unicode;
+use Drupal\plugin\Component\Annotation\AnnotationInterface;
+use Drupal\plugin\Component\Annotation\Plugin\Discovery\AnnotatedClassDiscovery as ComponentAnnotatedClassDiscovery;
+use Drupal\plugin\Component\Utility\Unicode;
 
 /**
  * Defines a discovery mechanism to find annotated plugins in PSR-0 namespaces.
@@ -51,9 +51,9 @@ class AnnotatedClassDiscovery extends ComponentAnnotatedClassDiscovery {
    *   If $subdir is not an empty string, it will be appended to each namespace.
    * @param string $plugin_definition_annotation_name
    *   (optional) The name of the annotation that contains the plugin definition.
-   *   Defaults to 'Drupal\Component\Annotation\Plugin'.
+   *   Defaults to 'Drupal\plugin\Component\Annotation\Plugin'.
    */
-  function __construct($subdir, \Traversable $root_namespaces, $plugin_definition_annotation_name = 'Drupal\Component\Annotation\Plugin') {
+  function __construct($subdir, \Traversable $root_namespaces, $plugin_definition_annotation_name = 'Drupal\plugin\Component\Annotation\Plugin') {
     if ($subdir) {
       // Prepend a directory separator to $subdir,
       // if it does not already have one.
@@ -76,7 +76,7 @@ class AnnotatedClassDiscovery extends ComponentAnnotatedClassDiscovery {
       $reader = parent::getAnnotationReader();
 
       // Add the Core annotation classes like @Translation.
-      $reader->addNamespace('Drupal\Core\Annotation', array(dirname(dirname(__DIR__)) . '/Annotation'));
+      $reader->addNamespace('Drupal\plugin\Core\Annotation', array(dirname(dirname(__DIR__)) . '/Annotation'));
       $this->annotationReader = $reader;
     }
     return $this->annotationReader;
@@ -94,7 +94,7 @@ class AnnotatedClassDiscovery extends ComponentAnnotatedClassDiscovery {
   }
 
   /**
-   * Extracts the provider name from a Drupal namespace.
+   * Extracts the provider name from a Drupal\plugin namespace.
    *
    * @param string $namespace
    *   The namespace to extract the provider from.
@@ -103,7 +103,7 @@ class AnnotatedClassDiscovery extends ComponentAnnotatedClassDiscovery {
    *   The matching provider name, or NULL otherwise.
    */
   protected function getProviderFromNamespace($namespace) {
-    preg_match('|^Drupal\\\\(?<provider>[\w]+)\\\\|', $namespace, $matches);
+    preg_match('|^Drupal\plugin\\\\(?<provider>[\w]+)\\\\|', $namespace, $matches);
 
     if (isset($matches['provider'])) {
       return Unicode::strtolower($matches['provider']);
@@ -120,14 +120,14 @@ class AnnotatedClassDiscovery extends ComponentAnnotatedClassDiscovery {
     if ($this->namespaceSuffix) {
       foreach ($this->rootNamespacesIterator as $namespace => $dirs) {
         // Append the namespace suffix to the base namespace, to obtain the
-        // plugin namespace. E.g. 'Drupal\Views' may become
-        // 'Drupal\Views\Plugin\Block'.
+        // plugin namespace. E.g. 'Drupal\plugin\Views' may become
+        // 'Drupal\plugin\Views\Plugin\Block'.
         $namespace .= $this->namespaceSuffix;
         foreach ((array) $dirs as $dir) {
           // Append the directory suffix to the PSR-4 base directory, to obtain
           // the directory where plugins are found.
-          // E.g. DRUPAL_ROOT . '/core/modules/views/src' may become
-          // DRUPAL_ROOT . '/core/modules/views/src/Plugin/Block'.
+          // E.g. Drupal\plugin_ROOT . '/core/modules/views/src' may become
+          // Drupal\plugin_ROOT . '/core/modules/views/src/Plugin/Block'.
           $plugin_namespaces[$namespace][] = $dir . $this->directorySuffix;
         }
       }

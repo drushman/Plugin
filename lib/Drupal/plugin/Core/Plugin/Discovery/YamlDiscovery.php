@@ -2,14 +2,14 @@
 
 /**
  * @file
- * Contains \Drupal\Core\Plugin\Discovery\YamlDiscovery.
+ * Contains \Drupal\plugin\Core\Plugin\Discovery\YamlDiscovery.
  */
 
-namespace Drupal\Core\Plugin\Discovery;
+namespace Drupal\plugin\Core\Plugin\Discovery;
 
-use Drupal\Component\Plugin\Discovery\DiscoveryInterface;
-use Drupal\Component\Discovery\YamlDiscovery as ComponentYamlDiscovery;
-use Drupal\Component\Plugin\Discovery\DiscoveryTrait;
+use Drupal\plugin\Component\Plugin\Discovery\DiscoveryInterface;
+use Drupal\plugin\Component\Discovery\YamlDiscovery as ComponentYamlDiscovery;
+use Drupal\plugin\Component\Plugin\Discovery\DiscoveryTrait;
 
 /**
  * Allows YAML files to define plugin definitions.
@@ -21,7 +21,7 @@ class YamlDiscovery implements DiscoveryInterface {
   /**
    * YAML file discovery and parsing handler.
    *
-   * @var \Drupal\Component\Discovery\YamlDiscovery
+   * @var \Drupal\plugin\Component\Discovery\YamlDiscovery
    */
   protected $discovery;
 

@@ -2,13 +2,13 @@
 
 /**
  * @file
- * Contains \Drupal\Core\Plugin\Context\ContextHandlerInterface.
+ * Contains \Drupal\plugin\Core\Plugin\Context\ContextHandlerInterface.
  */
 
-namespace Drupal\Core\Plugin\Context;
+namespace Drupal\plugin\Core\Plugin\Context;
 
-use Drupal\Component\Plugin\ContextAwarePluginInterface;
-use Drupal\Core\TypedData\DataDefinitionInterface;
+use Drupal\plugin\Component\Plugin\ContextAwarePluginInterface;
+use Drupal\plugin\Core\TypedData\DataDefinitionInterface;
 
 /**
  * Provides an interface for handling sets of contexts.
@@ -18,9 +18,9 @@ interface ContextHandlerInterface {
   /**
    * Determines plugins whose constraints are satisfied by a set of contexts.
    *
-   * @todo Use context definition objects after https://drupal.org/node/2281635.
+   * @todo Use context definition objects after https://Drupal\plugin.org/node/2281635.
    *
-   * @param \Drupal\Component\Plugin\Context\ContextInterface[] $contexts
+   * @param \Drupal\plugin\Component\Plugin\Context\ContextInterface[] $contexts
    *   An array of contexts.
    * @param array $definitions .
    *   An array of plugin definitions.
@@ -33,11 +33,11 @@ interface ContextHandlerInterface {
   /**
    * Checks a set of requirements against a set of contexts.
    *
-   * @todo Use context definition objects after https://drupal.org/node/2281635.
+   * @todo Use context definition objects after https://Drupal\plugin.org/node/2281635.
    *
-   * @param \Drupal\Component\Plugin\Context\ContextInterface[] $contexts
+   * @param \Drupal\plugin\Component\Plugin\Context\ContextInterface[] $contexts
    *   An array of available contexts.
-   * @param \Drupal\Core\TypedData\DataDefinitionInterface[] $requirements
+   * @param \Drupal\plugin\Core\TypedData\DataDefinitionInterface[] $requirements
    *   An array of requirements.
    *
    * @return bool
@@ -49,14 +49,14 @@ interface ContextHandlerInterface {
   /**
    * Determines which contexts satisfy the constraints of a given definition.
    *
-   * @todo Use context definition objects after https://drupal.org/node/2281635.
+   * @todo Use context definition objects after https://Drupal\plugin.org/node/2281635.
    *
-   * @param \Drupal\Component\Plugin\Context\ContextInterface[] $contexts
+   * @param \Drupal\plugin\Component\Plugin\Context\ContextInterface[] $contexts
    *   An array of contexts.
-   * @param \Drupal\Core\TypedData\DataDefinitionInterface $definition
+   * @param \Drupal\plugin\Core\TypedData\DataDefinitionInterface $definition
    *   The definition to satisfy.
    *
-   * @return \Drupal\Component\Plugin\Context\ContextInterface[]
+   * @return \Drupal\plugin\Component\Plugin\Context\ContextInterface[]
    *   An array of matching contexts.
    */
   public function getMatchingContexts(array $contexts, DataDefinitionInterface $definition);
@@ -64,9 +64,9 @@ interface ContextHandlerInterface {
   /**
    * Prepares a plugin for evaluation.
    *
-   * @param \Drupal\Component\Plugin\ContextAwarePluginInterface $plugin
+   * @param \Drupal\plugin\Component\Plugin\ContextAwarePluginInterface $plugin
    *   A plugin about to be evaluated.
-   * @param \Drupal\Component\Plugin\Context\ContextInterface[] $contexts
+   * @param \Drupal\plugin\Component\Plugin\Context\ContextInterface[] $contexts
    *   An array of contexts to set on the plugin. They will only be set if they
    *   match the plugin's context definitions.
    * @param array $mappings
@@ -75,7 +75,7 @@ interface ContextHandlerInterface {
    *   plugin expects a context named 'node', then this map would contain
    *   'entity' => 'node'.
    *
-   * @throws \Drupal\Component\Plugin\Exception\ContextException
+   * @throws \Drupal\plugin\Component\Plugin\Exception\ContextException
    *   Thrown when a context assignment was not satisfied.
    */
   public function applyContextMapping(ContextAwarePluginInterface $plugin, $contexts, $mappings = array());

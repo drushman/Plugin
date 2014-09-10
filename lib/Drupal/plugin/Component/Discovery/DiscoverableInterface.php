@@ -2,10 +2,10 @@
 
 /**
  * @file
- * Contains \Drupal\Component\Discovery\DiscoverableInterface.
+ * Contains \Drupal\plugin\Component\Discovery\DiscoverableInterface.
  */
 
-namespace Drupal\Component\Discovery;
+namespace Drupal\plugin\Component\Discovery;
 
 /**
  * Interface for classes providing a type of discovery.

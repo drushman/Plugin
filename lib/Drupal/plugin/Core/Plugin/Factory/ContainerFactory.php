@@ -1,12 +1,12 @@
 <?php
 /**
  * @file
- * Contains \Drupal\Core\Plugin\Factory\ContainerFactory.
+ * Contains \Drupal\plugin\Core\Plugin\Factory\ContainerFactory.
  */
 
-namespace Drupal\Core\Plugin\Factory;
+namespace Drupal\plugin\Core\Plugin\Factory;
 
-use Drupal\Component\Plugin\Factory\DefaultFactory;
+use Drupal\plugin\Component\Plugin\Factory\DefaultFactory;
 
 /**
  * Plugin factory which passes a container to a create method.
@@ -21,8 +21,8 @@ class ContainerFactory extends DefaultFactory {
     $plugin_class = static::getPluginClass($plugin_id, $plugin_definition);
 
     // If the plugin provides a factory method, pass the container to it.
-    if (is_subclass_of($plugin_class, 'Drupal\Core\Plugin\ContainerFactoryPluginInterface')) {
-      return $plugin_class::create(\Drupal::getContainer(), $configuration, $plugin_id, $plugin_definition);
+    if (is_subclass_of($plugin_class, 'Drupal\plugin\Core\Plugin\ContainerFactoryPluginInterface')) {
+      return $plugin_class::create(\Drupal\plugin::getContainer(), $configuration, $plugin_id, $plugin_definition);
     }
 
     // Otherwise, create the plugin directly.

@@ -2,12 +2,12 @@
 
 /**
  * @file
- * Contains \Drupal\Component\Plugin\ContextAwarePluginInterface.
+ * Contains \Drupal\plugin\Component\Plugin\ContextAwarePluginInterface.
  */
 
-namespace Drupal\Component\Plugin;
+namespace Drupal\plugin\Component\Plugin;
 
-use \Drupal\Component\Plugin\Context\ContextInterface;
+use \Drupal\plugin\Component\Plugin\Context\ContextInterface;
 
 /**
  * Interface for defining context aware plugins.
@@ -22,7 +22,7 @@ interface ContextAwarePluginInterface extends PluginInspectionInterface {
   /**
    * Gets the context definitions of the plugin.
    *
-   * @return \Drupal\Component\Plugin\Context\ContextDefinitionInterface[]
+   * @return \Drupal\plugin\Component\Plugin\Context\ContextDefinitionInterface[]
    *   The array of context definitions, keyed by context name.
    */
   public function getContextDefinitions();
@@ -33,10 +33,10 @@ interface ContextAwarePluginInterface extends PluginInspectionInterface {
    * @param string $name
    *   The name of the context in the plugin definition.
    *
-   * @throws \Drupal\Component\Plugin\Exception\PluginException
+   * @throws \Drupal\plugin\Component\Plugin\Exception\PluginException
    *   If the requested context is not defined.
    *
-   * @return \Drupal\Component\Plugin\Context\ContextDefinitionInterface.
+   * @return \Drupal\plugin\Component\Plugin\Context\ContextDefinitionInterface.
    *   The definition against which the context value must validate.
    */
   public function getContextDefinition($name);
@@ -44,7 +44,7 @@ interface ContextAwarePluginInterface extends PluginInspectionInterface {
   /**
    * Gets the defined contexts.
    *
-   * @throws \Drupal\Component\Plugin\Exception\PluginException
+   * @throws \Drupal\plugin\Component\Plugin\Exception\PluginException
    *   If contexts are defined but not set.
    *
    * @return array
@@ -58,10 +58,10 @@ interface ContextAwarePluginInterface extends PluginInspectionInterface {
    * @param string $name
    *   The name of the context in the plugin definition.
    *
-   * @throws \Drupal\Component\Plugin\Exception\PluginException
+   * @throws \Drupal\plugin\Component\Plugin\Exception\PluginException
    *   If the requested context is not set.
    *
-   * @return \Drupal\Component\Plugin\Context\ContextInterface
+   * @return \Drupal\plugin\Component\Plugin\Context\ContextInterface
    *   The context object.
    */
   public function getContext($name);
@@ -81,7 +81,7 @@ interface ContextAwarePluginInterface extends PluginInspectionInterface {
    * @param string $name
    *   The name of the context in the plugin configuration.
    *
-   * @throws \Drupal\Component\Plugin\Exception\PluginException
+   * @throws \Drupal\plugin\Component\Plugin\Exception\PluginException
    *   If the requested context is not set.
    *
    * @return mixed
@@ -94,7 +94,7 @@ interface ContextAwarePluginInterface extends PluginInspectionInterface {
    *
    * @param string $name
    *   The name of the context in the plugin configuration.
-   * @param \Drupal\Component\Plugin\Context\ContextInterface $context
+   * @param \Drupal\plugin\Component\Plugin\Context\ContextInterface $context
    *   The context object to set.
    */
   public function setContext($name, ContextInterface $context);
@@ -108,10 +108,10 @@ interface ContextAwarePluginInterface extends PluginInspectionInterface {
    *   The value to set the context to. The value has to validate against the
    *   provided context definition.
    *
-   * @throws \Drupal\Component\Plugin\Exception\PluginException
+   * @throws \Drupal\plugin\Component\Plugin\Exception\PluginException
    *   If the value does not pass validation.
    *
-   * @return \Drupal\Component\Plugin\ContextAwarePluginInterface.
+   * @return \Drupal\plugin\Component\Plugin\ContextAwarePluginInterface.
    *   A context aware plugin object for chaining.
    */
   public function setContextValue($name, $value);

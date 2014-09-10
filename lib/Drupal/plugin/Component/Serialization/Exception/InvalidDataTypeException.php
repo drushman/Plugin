@@ -2,10 +2,10 @@
 
 /**
  * @file
- * Contains \Drupal\Component\Serialization\Exception\InvalidDataTypeException.
+ * Contains \Drupal\plugin\Component\Serialization\Exception\InvalidDataTypeException.
  */
 
-namespace Drupal\Component\Serialization\Exception;
+namespace Drupal\plugin\Component\Serialization\Exception;
 
 /**
  * Exception thrown when a data type is invalid.

@@ -2,10 +2,10 @@
 
 /**
  * @file
- * Definition of Drupal\Component\Plugin\Discovery\DiscoveryInterface.
+ * Definition of Drupal\plugin\Component\Plugin\Discovery\DiscoveryInterface.
  */
 
-namespace Drupal\Component\Plugin\Discovery;
+namespace Drupal\plugin\Component\Plugin\Discovery;
 
 /**
  * An interface defining the minimum requirements of building a plugin
@@ -27,7 +27,7 @@ interface DiscoveryInterface {
    *   A plugin definition, or NULL if the plugin ID is invalid and
    *   $exception_on_invalid is FALSE.
    *
-   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+   * @throws \Drupal\plugin\Component\Plugin\Exception\PluginNotFoundException
    *   Thrown if $plugin_id is invalid and $exception_on_invalid is TRUE.
    */
   public function getDefinition($plugin_id, $exception_on_invalid = TRUE);

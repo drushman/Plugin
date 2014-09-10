@@ -2,12 +2,12 @@
 
 /**
  * @file
- * Contains \Drupal\Component\Plugin\PluginManagerBase
+ * Contains \Drupal\plugin\Component\Plugin\PluginManagerBase
  */
 
-namespace Drupal\Component\Plugin;
+namespace Drupal\plugin\Component\Plugin;
 
-use Drupal\Component\Plugin\Discovery\DiscoveryTrait;
+use Drupal\plugin\Component\Plugin\Discovery\DiscoveryTrait;
 
 /**
  * Base class for plugin managers.
@@ -19,21 +19,21 @@ abstract class PluginManagerBase implements PluginManagerInterface {
   /**
    * The object that discovers plugins managed by this manager.
    *
-   * @var \Drupal\Component\Plugin\Discovery\DiscoveryInterface
+   * @var \Drupal\plugin\Component\Plugin\Discovery\DiscoveryInterface
    */
   protected $discovery;
 
   /**
    * The object that instantiates plugins managed by this manager.
    *
-   * @var \Drupal\Component\Plugin\Factory\FactoryInterface
+   * @var \Drupal\plugin\Component\Plugin\Factory\FactoryInterface
    */
   protected $factory;
 
   /**
    * The object that returns the preconfigured plugin instance appropriate for a particular runtime condition.
    *
-   * @var \Drupal\Component\Plugin\Mapper\MapperInterface
+   * @var \Drupal\plugin\Component\Plugin\Mapper\MapperInterface
    */
   protected $mapper;
 

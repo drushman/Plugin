@@ -1,10 +1,10 @@
 <?php
 /**
  * @file
- * Contains \Drupal\Component\Plugin\PluginInspectionInterface.
+ * Contains \Drupal\plugin\Component\Plugin\PluginInspectionInterface.
  */
 
-namespace Drupal\Component\Plugin;
+namespace Drupal\plugin\Component\Plugin;
 
 /**
  * Plugin interface for providing some metadata inspection.
